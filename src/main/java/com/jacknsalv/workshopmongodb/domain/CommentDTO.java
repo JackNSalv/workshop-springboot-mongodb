@@ -1,7 +1,7 @@
 package com.jacknsalv.workshopmongodb.domain;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
 import com.jacknsalv.workshopmongodb.dto.AuthorDTO;
 
@@ -10,13 +10,13 @@ public class CommentDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String text;
-	private Instant date;
+	private Date date;
 	private AuthorDTO author;
 	
 	public CommentDTO() {
 	}
 
-	public CommentDTO(String text, Instant date, AuthorDTO author) {
+	public CommentDTO(String text, Date date, AuthorDTO author) {
 		super();
 		this.text = text;
 		this.date = date;
@@ -31,11 +31,11 @@ public class CommentDTO implements Serializable{
 		this.text = text;
 	}
 
-	public Instant getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(Instant date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
