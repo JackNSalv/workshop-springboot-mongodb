@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import com.jacknsalv.workshopmongodb.domain.CommentDTO;
 import com.jacknsalv.workshopmongodb.domain.Post;
 import com.jacknsalv.workshopmongodb.domain.User;
 import com.jacknsalv.workshopmongodb.dto.AuthorDTO;
@@ -39,11 +40,23 @@ public class Instantiation implements CommandLineRunner {
 				"Acordei feliz hoje!", new AuthorDTO(maria));
 
 		postRepository.deleteAll();
+		
+		
+		
+		CommentDTO comment1 = new CommentDTO("Boa viagem mano!", Instant.parse("2018-03-21T09:28:27.141Z"), new AuthorDTO(alex));
+		CommentDTO comment2 = new CommentDTO("Aproveite", Instant.parse("2018-03-21T09:28:27.141Z"), new AuthorDTO(bob));
+		CommentDTO comment3 = new CommentDTO("Tenha um ótimo dia!", Instant.parse("2018-03-21T09:28:27.141Z"), new AuthorDTO(alex));
+		
+		post1.getComments().addAll(Arrays.asList(comment1, comment2));
+		post2.getComments().add(comment3);
+		
 		postRepository.saveAll(Arrays.asList(post1, post2));
 		
 		maria.getPosts().addAll(Arrays.asList(post1, post2));
 		
 		userRepository.save(maria);
+		
+
 	}
 
 }
