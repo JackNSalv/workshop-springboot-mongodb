@@ -1,4 +1,4 @@
-package br.com.course.resources.exceptions;
+package com.jacknsalv.workshopmongodb.resources.exceptions;
 
 import java.time.Instant;
 
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.jacknsalv.workshopmongodb.services.exceptions.ObjectNotFoundException;
 
-import br.com.course.services.exceptions.DatabaseException;
-import br.com.course.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
